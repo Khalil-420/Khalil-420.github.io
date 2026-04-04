@@ -13,7 +13,7 @@ description: "Leaking a flag character by character using a sorting oracle."
 
 I authored 4 web exploitation challenges for CyberTEK CTF: `reCURSED`, `B17`, `YessYou`, and `Random Quotes`. This writeup covers **YessYou**.
 
-![YessYou challenge](../assets/images/yessyou_1.webp)
+![YessYou challenge](../../../assets/images/yessyou_1.webp)
 
 ## Recon
 
