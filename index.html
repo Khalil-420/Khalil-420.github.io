@@ -1,0 +1,28 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <h1>Hi, I'm <span class="accent">{{ site.author }}</span></h1>
+  <p>{{ site.description }}</p>
+  <div class="tag-row">
+    <span class="tag ctf">#ctf</span>
+    <span class="tag vuln">#vuln-research</span>
+    <span class="tag tool">#tools</span>
+    <span class="tag">#notes</span>
+  </div>
+</section>
+
+<p class="section-title">// Recent Posts</p>
+<ul class="post-list">
+  {% for post in site.posts limit:10 %}
+  <li class="post-item">
+    <div>
+      <a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="category-badge {{ post.category }}">{{ post.category }}</span>
+      <div class="post-meta">{{ post.description }}</div>
+    </div>
+    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+  </li>
+  {% endfor %}
+</ul>
