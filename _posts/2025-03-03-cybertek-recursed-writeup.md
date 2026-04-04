@@ -13,7 +13,7 @@ description: "Bypassing a recursive path traversal filter using Python's recursi
 
 I authored 4 web exploitation challenges for CyberTEK CTF: `reCURSED`, `B17`, `YessYou`, and `Random Quotes`. This writeup covers **reCURSED**.
 
-![reCURSED challenge](/assets/recursed_1.webp)
+![reCURSED challenge](../../assets/recursed_1.webp)
 
 ## Source Code Analysis
 
@@ -73,7 +73,7 @@ GET /?image=../../../../../../../../../../../../../etc/passwd
      ^--- repeated enough times to exhaust the recursion limit
 ```
 
-![Recursion limit bypass](/assets/recursed_2.webp)
+![Recursion limit bypass](../../assets/recursed_2.webp)
 
 We now have a working **Path Traversal** primitive. But the flag file is already deleted — so there's nothing at `flag.txt` to read.
 
@@ -99,7 +99,7 @@ Using our path traversal to read `/proc/self/fd/3`:
 GET /?image=<1000x../>proc/self/fd/3
 ```
 
-![Flag via /proc/self/fd/3](/assets/recursed_3.webp)
+![Flag via /proc/self/fd/3](../../assets/recursed_3.webp)
 
 The flag is right there. VOILÀ! 👌
 
