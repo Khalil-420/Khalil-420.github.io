@@ -4,12 +4,13 @@ title: Home
 ---
 <section class="hero">
   <h1>Hi, I'm <span class="accent">{{ site.author }}</span></h1>
-  <p>{{ site.description }}</p>
+  <p>Bug bounty hunter, CTF player & security enthusiast. I write about the things I break, build, and learn along the way.</p>
   <div class="tag-row">
     <span class="tag ctf">#ctf</span>
-    <span class="tag vuln">#vuln-research</span>
-    <span class="tag tool">#tools</span>
-    <span class="tag">#notes</span>
+    <span class="tag vuln">#bugbounty</span>
+    <span class="tag tool">#devops</span>
+    <span class="tag">#cybersecurity</span>
+    <span class="tag">#personal</span>
   </div>
 </section>
 
@@ -26,3 +27,7 @@ title: Home
   </li>
   {% endfor %}
 </ul>
+
+{% if site.posts.size == 0 %}
+<p class="empty-state">No posts yet — stay tuned.</p>
+{% endif %}

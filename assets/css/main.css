@@ -65,6 +65,11 @@ nav a:hover, nav a.active { color: var(--text); text-decoration: none; }
 .category-badge.vuln { color: var(--danger); border-color: var(--danger); }
 .category-badge.tools { color: var(--accent); border-color: var(--accent); }
 .category-badge.notes { color: var(--muted); border-color: var(--border); }
+.category-badge.bugbounty { color: var(--danger); border-color: var(--danger); }
+.category-badge.devops { color: var(--accent); border-color: var(--accent); }
+.category-badge.personal { color: var(--muted); border-color: var(--border); }
+
+.empty-state { color: var(--muted); font-style: italic; margin-top: 1rem; }
 
 .post-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
 .post-header h1 { font-size: 1.8rem; line-height: 1.3; }

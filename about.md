@@ -5,17 +5,18 @@ title: About
 
 ## whoami
 
-Security researcher, CTF player, and lifelong learner.
+I'm **xhalyl** — bug bounty hunter, CTF player, and all-around security nerd.
 
-This blog is where I document everything I learn — writeups, research, tools, and raw notes.
+I spend my time hunting bugs, solving CTF challenges, tinkering with DevOps pipelines, and breaking things to understand how they work.
 
 ## What you'll find here
 
+- **Bug Bounty** — findings, methodology, and lessons from the hunt
 - **CTF Writeups** — step-by-step solutions with methodology explained
-- **Vulnerability Research** — CVE analysis, PoCs, and deep dives
-- **Tools & Scripts** — utilities I build along the way
-- **Notes** — learning logs and references
+- **Cybersecurity** — research, analysis, and deep dives
+- **DevOps** — infrastructure, automation, and tooling I work with
+- **Personal** — opinions, reflections, and whatever's on my mind
 
 ## Contact
 
-Find me on GitHub or reach out via the links in the footer.
+Find me on [GitHub](https://github.com/Khalil-420) or reach out via the links in the footer.
