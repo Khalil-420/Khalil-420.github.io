@@ -13,13 +13,13 @@ description: "Leaking a flag character by character using a sorting oracle."
 
 I authored 4 web exploitation challenges for CyberTEK CTF: `reCURSED`, `B17`, `YessYou`, and `Random Quotes`. This writeup covers **YessYou**.
 
-![YessYou challenge](assets/images/yessyou_1.webp)
+![YessYou challenge](/assets/images/yessyou_1.webp)
 
 ## Recon
 
 After registering and logging in we're presented with a profile page where we can update our Username, Password, and Description, add Notes, and view a leaderboard of special users: **Vi**, **Yasuo**, and our own account.
 
-![Profile page after login](assets/images/yessyou_2.webp)
+![Profile page after login](/assets/images/yessyou_2.webp)
 
 ## Source Code Analysis
 
@@ -60,7 +60,7 @@ The logic is simple:
 
 This gives us a character-by-character blind comparison oracle. 🙌
 
-![Sorting oracle in action](assets/images/yessyou_3.webp)
+![Sorting oracle in action](/assets/images/yessyou_3.webp)
 
 ## Exploitation
 
@@ -79,7 +79,7 @@ Following this logic character by character, the flag is revealed:
 Securinets{H4S4G1}
 ```
 
-![Flag found — HASAGI](assets/images/yessyou_4.webp)
+![Flag found — HASAGI](/assets/images/yessyou_4.webp)
 
 ## Summary
 
