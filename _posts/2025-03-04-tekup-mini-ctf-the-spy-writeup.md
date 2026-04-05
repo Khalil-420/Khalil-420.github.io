@@ -17,19 +17,19 @@ I made a series of forensics challenges for the TEKUP Mini CTF. This writeup cov
 
 ## THE SPY 0
 
-![The Spy 0 challenge](/../../assets/images/spy_1.webp)
+![The Spy 0 challenge](/assets/images/spy_1.webp)
 
 After downloading the attachments, we find two files: a `.ppt` file and a password-protected zip.
 
 Opening the PowerPoint, a hidden base64 string is visible in the slide:
 
-![Hidden base64 in PowerPoint](/../../assets/images/spy_2.webp)
+![Hidden base64 in PowerPoint](/assets/images/spy_2.webp)
 
 Throwing it into CyberChef and decoding reveals... a zip file! Inside it:
 - `flag.png` → **THE SPY 0 flag** ✅
 - `spylogs.txt` → useful for the next parts
 
-![Decoded zip contents](/../../assets/images/spy_3.webp)
+![Decoded zip contents](/assets/images/spy_3.webp)
 
 THE SPY 0 solved 😄 — now let's find this spy!
 
@@ -37,11 +37,11 @@ THE SPY 0 solved 😄 — now let's find this spy!
 
 ## THE SPY 1
 
-![The Spy 1 challenge](/../../assets/images/spy_4.webp)
+![The Spy 1 challenge](/assets/images/spy_4.webp)
 
 We now have `spylogs.txt` from the previous step. Taking a look at the log file:
 
-![spylogs.txt contents](/../../assets/images/spy_5.webp)
+![spylogs.txt contents](/assets/images/spy_5.webp)
 
 HTTP requests with a `secret` query parameter containing base64-encoded values. Decoding them one by one:
 
@@ -60,11 +60,11 @@ Flag: `Securinets{HE_ALW4YS_JOKE_4ROUND!}` ✅
 
 ## THE SPY 2
 
-![The Spy 2 challenge](/../../assets/images/spy_6.webp)
+![The Spy 2 challenge](/assets/images/spy_6.webp)
 
 We now have the zip password from the previous flag. Extracting it reveals `the_spy.img`:
 
-![Zip contents](/../../assets/images/spy_7.webp)
+![Zip contents](/assets/images/spy_7.webp)
 
 The `.img` file is a **LUKS encrypted disk**:
 
@@ -76,7 +76,7 @@ Trying to open it with `cryptsetup`:
 sudo cryptsetup luksOpen the_spy.img trah
 ```
 
-![cryptsetup asking for passphrase](/../../assets/images/spy_8.webp)
+![cryptsetup asking for passphrase](/assets/images/spy_8.webp)
 
 It asks for a passphrase. Time to bruteforce it:
 
@@ -85,7 +85,7 @@ sudo cryptsetup-john the_spy.img
 # or use hashcat / john with a wordlist
 ```
 
-![Bruteforce result](/../../assets/images/spy_9.webp)
+![Bruteforce result](/assets/images/spy_9.webp)
 
 Password: `abc123` — really!! 🤦
 
@@ -96,11 +96,11 @@ sudo mount /dev/mapper/trah /mnt
 ls /mnt
 ```
 
-![Mounted device contents](/../../assets/images/spy_10.webp)
+![Mounted device contents](/assets/images/spy_10.webp)
 
 Inside we find a `Dockerfile`:
 
-![Dockerfile contents](/../../assets/images/spy_11.webp)
+![Dockerfile contents](/assets/images/spy_11.webp)
 
 Next hint found: **`HE LIVES IN BARDO!`** — I think I know who it is, but let's be sure 😉
 
@@ -108,7 +108,7 @@ Next hint found: **`HE LIVES IN BARDO!`** — I think I know who it is, but let'
 
 ## THE SPY 3
 
-![The Spy 3 challenge](/../../assets/images/spy_12.webp)
+![The Spy 3 challenge](/assets/images/spy_12.webp)
 
 Looking at the Dockerfile more carefully, one line stands out:
 
@@ -123,11 +123,11 @@ docker pull verysus:1.3
 docker run verysus:1.3
 ```
 
-![Docker image output](/../../assets/images/spy_13.webp)
+![Docker image output](/assets/images/spy_13.webp)
 
 The output contains a base64 string. Decoding it:
 
-![Decoded output — spy revealed](/../../assets/images/spy_14.webp)
+![Decoded output — spy revealed](/assets/images/spy_14.webp)
 
 **The spy is found!** 👾
 
