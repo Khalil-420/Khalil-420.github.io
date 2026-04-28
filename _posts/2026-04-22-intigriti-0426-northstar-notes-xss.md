@@ -3,7 +3,7 @@ layout: post
 title: "Intigriti 0426 Challenge — Northstar Notes XSS"
 date: 2026-04-22
 category: ctf
-difficulty: hard
+difficulty: medium
 platform: Intigriti
 tags: [xss, csp-bypass, dompurify-bypass, path-traversal, web, ctf]
 description: "Chaining preset-injection, path traversal, DOMPurify config weakening, and strict-dynamic CSP to land a stored XSS in Intigriti's April 2026 challenge by KonaN."
