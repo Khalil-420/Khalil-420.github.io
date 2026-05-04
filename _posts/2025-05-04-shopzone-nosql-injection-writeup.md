@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "ShopZone CTF — Blind NoSQL Injection & ObjectId Leak Writeup"
-date: 2025-04-01
+date: 2025-05-04
 category: ctf
 difficulty: medium
-platform: CYBERTEK
+platform: CyberTEK
 tags: [nosql-injection, blind-injection, mongodb, objectid, web, ctf]
 description: "Exploiting blind NoSQL injection to leak a MongoDB ObjectId, extract machine bytes from pymongo 3.6.1, and derive a secret file path to read the flag."
 ---
