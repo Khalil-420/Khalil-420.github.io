@@ -5,7 +5,7 @@ title: About
 
 ## whoami
 
-I'm **xhalyl** — bug bounty hunter, CTF player, and all-around security nerd.
+I'm **xhalyl** — bug bounty hunter, CTF player, and all-around app security.
 
 I spend my time hunting bugs, solving CTF challenges, tinkering with DevOps pipelines, and breaking things to understand how they work.
 
