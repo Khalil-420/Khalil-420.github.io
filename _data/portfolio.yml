@@ -1,0 +1,141 @@
+# ============================================================
+# Portfolio content. Edit this file to update the homepage.
+# ============================================================
+
+profile:
+  name: "Mohamed Khalil Gammar"
+  title: "Cybersecurity Engineer · Penetration Tester · AI Automation Engineer"
+  pitch: "I find vulnerabilities, build AI tools, and ship things that work."
+  email: "gammarkhalil@gmail.com"
+  phone: "+49 1521 622 8373"
+  location: "Berlin, Germany"
+  github: "https://github.com/Khalil-420"
+  linkedin: "https://www.linkedin.com/in/mohamed-khalil-gammar-44754119a/"
+  intigriti: "#"        # TODO: add your Intigriti profile URL
+  ctftime: "#"          # TODO: add your CTFtime profile URL
+  cv: "/assets/cv/cv.pdf"   # TODO: drop your CV PDF here
+
+about: >-
+  Final-year Cybersecurity Engineering student from Tunisia, based in Germany.
+  I specialise in offensive security, AppSec, DevSecOps, and AI automation.
+
+about_highlights:
+  - "Published CVE-2025-9094 (CSTI in ThingsBoard)"
+  - "Authored the Intigriti Monthly Challenge — June 2026"
+  - "L3ak CTF — top 10 worldwide on CTFtime"
+  - "eWPTX certified"
+
+# ------------------------------------------------------------
+skills:
+  - category: "Offensive Security"
+    items: [Burp Suite, Nmap, Metasploit, OWASP ZAP, Kali Linux, PTES, "OWASP Top 10", CVSS]
+  - category: "DevSecOps"
+    items: [SAST, DAST, SCA, SonarQube, Trivy, Gitleaks, DefectDojo, Wazuh, Jenkins, "GitHub Actions"]
+  - category: "AI & Automation"
+    items: [LangChain, RAG, "Vector Databases", n8n, Pi-agent, "Claude Code", "LLM APIs"]
+  - category: "Development"
+    items: [Python, TypeScript, FastAPI, React, Bash, SQL, Docker, Kubernetes, Git]
+  - category: "Cloud"
+    items: [AWS, Azure, OVH, DigitalOcean, Terraform, Helm, ArgoCD]
+
+# ------------------------------------------------------------
+experience:
+  - role: "Automation & Security Engineer"
+    org: "Kian Technology"
+    period: "May 2025 – Jan 2026"
+  - role: "Cyber Security Consultant"
+    org: "IntellisecSolutions"
+    period: "Feb 2025 – May 2025"
+  - role: "Penetration Tester Intern"
+    org: "Kian Technology"
+    period: "Jul 2024 – Aug 2024"
+  - role: "DevSecOps Intern"
+    org: "Kian Technology"
+    period: "Jun 2024 – Jul 2024"
+  - role: "Freelance Pentester"
+    org: "Upwork"
+    period: "Ongoing"
+
+# ------------------------------------------------------------
+projects:
+  - name: "AutoWright"
+    desc: "CLI AI agent that generates Playwright test suites from plain-English instructions using Pi-agent — 60% token reduction vs MCP."
+    tags: [Pi-agent, CLI, Playwright, AI]
+    link: "https://github.com/Khalil-420/autowrightcli"
+  - name: "AI-Powered Mailing Assistant"
+    desc: "Full-stack assistant layered over Zimbra: React + FastAPI + LangChain + RAG, deployed on Azure."
+    tags: [React, FastAPI, LangChain, RAG, Azure]
+    link: "#"
+  - name: "SOC & SOAR Implementation"
+    desc: "End-to-end automated incident response with Wazuh, TheHive, Shuffle, Suricata, and MISP."
+    tags: [Wazuh, TheHive, Shuffle, Suricata, MISP]
+    link: "#"
+  - name: "GitOps CI/CD Infrastructure"
+    desc: "Full GitOps delivery pipeline on AWS with Jenkins, ArgoCD, Helm, and MinIO."
+    tags: [AWS, Jenkins, ArgoCD, Helm, MinIO]
+    link: "#"
+  - name: "Penetration Testing Gamification Platform"
+    desc: "Proxmox-backed platform with AI-based scoring and on-demand VM deployment."
+    tags: [Proxmox, AI, Automation]
+    link: "#"
+  - name: "CTF Challenge Infrastructure"
+    desc: "Isolated, at-scale CTF environments on Kubernetes + Docker, hosted on OVH."
+    tags: [Kubernetes, Docker, OVH]
+    link: "#"
+
+# ------------------------------------------------------------
+research:
+  - title: "CVE-2025-9094"
+    desc: "CSTI vulnerability in ThingsBoard — discovered and published."
+    link: "#"   # TODO: CVE / advisory link
+  - title: "Intigriti Monthly Challenge — June 2026"
+    desc: "Authored and published the official monthly XSS challenge."
+    link: "#"   # TODO: challenge link
+  - title: "Bug Bounty Research — Intigriti"
+    desc: "Ongoing bug bounty research and reporting on the Intigriti platform."
+    link: "#"
+  - title: "Freelance Pentesting — Upwork"
+    desc: "Client security engagements and vulnerability assessments."
+    link: "#"
+
+# ------------------------------------------------------------
+ctf:
+  team: "Team L3ak — top 10 worldwide on CTFtime"
+  highlights:
+    - "1st place: ImaginaryCTF, COMPFEST CTF, PatriotCTF, RITSEC CTF, UMassCTF, BearcatCTF"
+    - "Challenge author for L3ak CTF — played by 1000+ teams worldwide"
+    - "1st place — CyberSphere Congress Advanced CTF"
+    - "Top 15 — Blackhat MEA International CTF"
+    - "Securinets TEK-UP — Technical Director; deployed CTF infrastructure for international competitions"
+
+# ------------------------------------------------------------
+certifications:
+  - name: "eWPTX"
+    full: "Web App Penetration Tester eXtreme"
+    badge: "/assets/badges/ewptx.png"   # TODO: add badge image
+    verify: "#"                          # TODO: verification link
+  - name: "eWPT"
+    full: "Web Application Penetration Tester"
+    badge: "/assets/badges/ewpt.png"
+    verify: "#"
+  - name: "eJPT"
+    full: "Junior Penetration Tester"
+    badge: "/assets/badges/ejpt.png"
+    verify: "#"
+  - name: "CKA"
+    full: "Certified Kubernetes Administrator"
+    badge: "/assets/badges/cka.png"
+    verify: "#"
+  - name: "PCAP"
+    full: "Certified Associate in Python Programming"
+    badge: "/assets/badges/pcap.png"
+    verify: "#"
+
+# ------------------------------------------------------------
+education:
+  - degree: "Diplôme d'Ingénieur — Information Systems & Networks Engineering (Cybersecurity)"
+    school: "TEK-UP University, Tunisia"
+    period: "2021 – 2026"
+  - degree: "Exchange Semester"
+    school: "Hochschule Schmalkalden, Germany"
+    period: "2025 – 2026"

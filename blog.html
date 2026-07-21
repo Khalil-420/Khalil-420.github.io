@@ -1,0 +1,35 @@
+---
+layout: default
+title: Blog
+description: Bug bounty, CTF writeups, cybersecurity, DevOps, and personal takes.
+permalink: /blog/
+---
+<section class="hero blog-hero">
+  <h1><span class="accent">// </span>Blog</h1>
+  <p>Bug bounty findings, CTF writeups, and notes on the things I break, build, and learn.</p>
+  <div class="tag-row">
+    <span class="tag ctf">#ctf</span>
+    <span class="tag vuln">#bugbounty</span>
+    <span class="tag tool">#devops</span>
+    <span class="tag">#cybersecurity</span>
+    <span class="tag">#personal</span>
+  </div>
+</section>
+
+<p class="section-title">// All Posts</p>
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="post-item">
+    <div>
+      <a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="category-badge {{ post.category }}">{{ post.category }}</span>
+      <div class="post-meta">{{ post.description }}</div>
+    </div>
+    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+  </li>
+  {% endfor %}
+</ul>
+
+{% if site.posts.size == 0 %}
+<p class="empty-state">No posts yet — stay tuned.</p>
+{% endif %}

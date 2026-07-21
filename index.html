@@ -1,33 +1,188 @@
 ---
-layout: default
+layout: portfolio
 title: Home
+description: Mohamed Khalil Gammar — Cybersecurity Engineer, Penetration Tester & AI Automation Engineer.
 ---
-<section class="hero">
-  <h1>Hi, I'm <span class="accent">{{ site.author }}</span></h1>
-  <p>Bug bounty hunter, CTF player & security enthusiast. I write about the things I break, build, and learn along the way.</p>
-  <div class="tag-row">
-    <span class="tag ctf">#ctf</span>
-    <span class="tag vuln">#bugbounty</span>
-    <span class="tag tool">#devops</span>
-    <span class="tag">#cybersecurity</span>
-    <span class="tag">#personal</span>
+{% assign p = site.data.portfolio %}
+
+<!-- ===================== HERO ===================== -->
+<section class="pf-hero" id="top">
+  <div class="pf-wrap">
+    <p class="pf-kicker">// whoami</p>
+    <h1 class="pf-name">{{ p.profile.name }}</h1>
+    <p class="pf-title">{{ p.profile.title }}</p>
+    <p class="pf-pitch">{{ p.profile.pitch }}</p>
+    <div class="pf-hero-actions">
+      <a class="btn btn-primary" href="mailto:{{ p.profile.email }}">Email</a>
+      <a class="btn" href="{{ p.profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="{{ p.profile.github }}" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-cv" href="{{ p.profile.cv | relative_url }}" download>Download CV</a>
+    </div>
+    <p class="pf-hero-meta">{{ p.profile.location }} · {{ p.profile.email }} · {{ p.profile.phone }}</p>
   </div>
 </section>
 
-<p class="section-title">// Recent Posts</p>
-<ul class="post-list">
-  {% for post in site.posts limit:10 %}
-  <li class="post-item">
-    <div>
-      <a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="category-badge {{ post.category }}">{{ post.category }}</span>
-      <div class="post-meta">{{ post.description }}</div>
+<!-- ===================== ABOUT ===================== -->
+<section class="pf-section" id="about">
+  <div class="pf-wrap">
+    <p class="section-title">// About Me</p>
+    <div class="about-grid">
+      <p class="about-bio">{{ p.about }}</p>
+      <ul class="about-highlights">
+        {% for h in p.about_highlights %}
+        <li><span class="hl-mark">▹</span>{{ h }}</li>
+        {% endfor %}
+      </ul>
     </div>
-    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-  </li>
-  {% endfor %}
-</ul>
+  </div>
+</section>
 
-{% if site.posts.size == 0 %}
-<p class="empty-state">No posts yet — stay tuned.</p>
-{% endif %}
+<!-- ===================== SKILLS ===================== -->
+<section class="pf-section alt" id="skills">
+  <div class="pf-wrap">
+    <p class="section-title">// Skills</p>
+    <div class="skills-grid">
+      {% for group in p.skills %}
+      <div class="skill-card">
+        <h3>{{ group.category }}</h3>
+        <div class="chip-row">
+          {% for item in group.items %}<span class="chip">{{ item }}</span>{% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section class="pf-section" id="experience">
+  <div class="pf-wrap">
+    <p class="section-title">// Experience</p>
+    <ul class="timeline">
+      {% for job in p.experience %}
+      <li class="timeline-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-head">
+            <span class="tl-role">{{ job.role }}</span>
+            <span class="tl-period">{{ job.period }}</span>
+          </div>
+          <div class="tl-org">{{ job.org }}</div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section class="pf-section alt" id="projects">
+  <div class="pf-wrap">
+    <p class="section-title">// Projects</p>
+    <div class="projects-grid">
+      {% for proj in p.projects %}
+      {% if proj.link != "#" %}
+      <a class="project-card linked" href="{{ proj.link }}" target="_blank" rel="noopener">
+      {% else %}
+      <div class="project-card">
+      {% endif %}
+        <div class="project-head">
+          <h3>{{ proj.name }}</h3>
+          {% if proj.link != "#" %}<span class="ext">↗</span>{% endif %}
+        </div>
+        <p class="project-desc">{{ proj.desc }}</p>
+        <div class="chip-row">
+          {% for t in proj.tags %}<span class="chip sm">{{ t }}</span>{% endfor %}
+        </div>
+      {% if proj.link != "#" %}</a>{% else %}</div>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESEARCH ===================== -->
+<section class="pf-section" id="research">
+  <div class="pf-wrap">
+    <p class="section-title">// Security Research & Achievements</p>
+    <div class="research-grid">
+      {% for r in p.research %}
+      <div class="research-card">
+        <h3>
+          {{ r.title }}
+          {% if r.link != "#" %}<a class="ext-link" href="{{ r.link }}" target="_blank" rel="noopener">↗</a>{% endif %}
+        </h3>
+        <p>{{ r.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTF ===================== -->
+<section class="pf-section alt" id="ctf">
+  <div class="pf-wrap">
+    <p class="section-title">// CTF & Community</p>
+    <p class="ctf-team"><span class="hl-mark">★</span>{{ p.ctf.team }}</p>
+    <ul class="ctf-list">
+      {% for c in p.ctf.highlights %}
+      <li><span class="hl-mark">▹</span>{{ c }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== CERTIFICATIONS ===================== -->
+<section class="pf-section" id="certifications">
+  <div class="pf-wrap">
+    <p class="section-title">// Certifications</p>
+    <div class="certs-grid">
+      {% for cert in p.certifications %}
+      <a class="cert-card" href="{{ cert.verify }}" {% if cert.verify != "#" %}target="_blank" rel="noopener"{% endif %}>
+        <img class="cert-badge" src="{{ cert.badge | relative_url }}" alt="{{ cert.name }} badge"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cert-badge-fallback">{{ cert.name }}</div>
+        <div class="cert-meta">
+          <span class="cert-name">{{ cert.name }}</span>
+          <span class="cert-full">{{ cert.full }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDUCATION ===================== -->
+<section class="pf-section alt" id="education">
+  <div class="pf-wrap">
+    <p class="section-title">// Education</p>
+    <ul class="timeline">
+      {% for edu in p.education %}
+      <li class="timeline-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-head">
+            <span class="tl-role">{{ edu.degree }}</span>
+            <span class="tl-period">{{ edu.period }}</span>
+          </div>
+          <div class="tl-org">{{ edu.school }}</div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="pf-section" id="contact">
+  <div class="pf-wrap contact-wrap">
+    <p class="section-title">// Contact</p>
+    <p class="contact-lead">Let's build something — or break something. Reach out.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:{{ p.profile.email }}">{{ p.profile.email }}</a>
+      <a class="btn" href="{{ p.profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="{{ p.profile.github }}" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="{{ p.profile.intigriti }}" {% if p.profile.intigriti != "#" %}target="_blank" rel="noopener"{% endif %}>Intigriti</a>
+      <a class="btn" href="{{ p.profile.ctftime }}" {% if p.profile.ctftime != "#" %}target="_blank" rel="noopener"{% endif %}>CTFtime</a>
+    </div>
+  </div>
+</section>

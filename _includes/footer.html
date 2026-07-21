@@ -1,9 +1,10 @@
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>© {{ 'now' | date: "%Y" }} {{ site.author }} — built with Jekyll & ☕</span>
+    <span>© {{ 'now' | date: "%Y" }} {{ site.data.portfolio.profile.name | default: site.author }} — built with Jekyll & ☕</span>
     <div class="footer-links">
-      <a href="https://github.com/Khalil-420" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/mohamed-khalil-gammar-44754119a/" target="_blank">LinkedIn</a>
+      <a href="{{ site.data.portfolio.profile.github }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="{{ site.data.portfolio.profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:{{ site.data.portfolio.profile.email }}">Email</a>
     </div>
   </div>
 </footer>

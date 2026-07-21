@@ -3,9 +3,18 @@
     <a href="{{ '/' | relative_url }}" class="site-title">
       <span>~/</span>{{ site.author | downcase | replace: ' ', '-' }}
     </a>
-    <nav>
-      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
-      <a href="{{ '/about' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav">
+      {% assign home = '/' | relative_url %}
+      <a href="{{ home }}#about">About</a>
+      <a href="{{ home }}#skills">Skills</a>
+      <a href="{{ home }}#projects">Projects</a>
+      <a href="{{ home }}#research">Research</a>
+      <a href="{{ home }}#ctf">CTF</a>
+      <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a>
+      <a href="{{ home }}#contact">Contact</a>
     </nav>
   </div>
 </header>
